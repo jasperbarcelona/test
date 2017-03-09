@@ -1,0 +1,9 @@
+<html>
+	{% if status == 'Message Sent' %}
+	<i class="material-icons status-success md-42">done</i>
+	{% else %}
+	<i class="material-icons status-error md-42">error_outline</i>
+	{% endif %}
+	<br />
+	<span class="status-message">{{status}}</span>
+</html>

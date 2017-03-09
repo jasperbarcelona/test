@@ -1,27 +1,99 @@
-{% extends "_base.html" %}
-
+{% extends "base.html" %}
 {% block content %}
-
-<div class="text-center">
-  <h1>Welcome!</h1>
+<div class="main">
+	<div class="content">
+	</div>
+	<div class="menu-container col-sm-12">
+		<div class="menu-item-container col-md-2 col-sm-3 col-xs-4">
+			<div class="menu-item" onclick="show_students()">
+				<div class="menu-icon-container">
+					<i class="material-icons">&#xE7FD;</i>
+				</div>
+				<div class="menu-text-container">
+					<span>Students</span>
+				</div>
+			</div>
+		</div>
+		<div class="menu-item-container col-md-2 col-sm-3 col-xs-4">
+			<div class="menu-item" onclick="show_staff()">
+				<div class="menu-icon-container">
+					<i class="material-icons">&#xE7EF;</i>
+				</div>
+				<div class="menu-text-container">
+					<span>Staff</span>
+				</div>
+			</div>
+		</div>
+		<div class="menu-item-container col-md-2 col-sm-3 col-xs-4">
+			<div class="menu-item" onclick="show_logs()">
+				<div class="menu-icon-container">
+					<i class="material-icons">&#xE896;</i>
+				</div>
+				<div class="menu-text-container">
+					<span>Logs</span>
+				</div>
+			</div>
+		</div>
+		<div class="menu-item-container col-md-2 col-sm-3 col-xs-4">
+			<div class="menu-item" onclick="show_attendance()">
+				<div class="menu-icon-container">
+					<i class="material-icons">check</i>
+				</div>
+				<div class="menu-text-container">
+					<span>Attendance</span>
+				</div>
+			</div>
+		</div>
+		<div class="menu-item-container col-md-2 col-sm-3 col-xs-4">
+			<div class="menu-item">
+				<div class="menu-icon-container">
+					<i class="material-icons">credit_card</i>
+				</div>
+				<div class="menu-text-container">
+					<span>E-Wallet</span>
+				</div>
+			</div>
+		</div>
+		<div class="menu-item-container col-md-2 col-sm-3 col-xs-4">
+			<div class="menu-item" onclick="show_fees()">
+				<div class="menu-icon-container">
+					<i class="material-icons">&#xE227;</i>
+				</div>
+				<div class="menu-text-container">
+					<span>Fees</span>
+				</div>
+			</div>
+		</div>
+		<div class="menu-item-container col-md-2 col-sm-3 col-xs-4">
+			<div class="menu-item" data-toggle="modal" data-target="#message-modal" onclick="open_messages()">
+				<div class="menu-icon-container">
+					<i class="material-icons">announcement</i>
+				</div>
+				<div class="menu-text-container">
+					<span>Broadcast</span>
+				</div>
+			</div>
+		</div>
+		<div class="menu-item-container col-md-2 col-sm-3 col-xs-4">
+			<div class="menu-item" data-toggle="modal" data-target="#schedule-modal" onclick="populate_schedule()">
+				<div class="menu-icon-container">
+					<i class="material-icons">&#xE916;</i>
+				</div>
+				<div class="menu-text-container">
+					<span>Schedule</span>
+				</div>
+			</div>
+		</div>
+		<div class="menu-item-container col-md-2 col-sm-3 col-xs-4">
+			<div class="menu-item">
+				<div class="menu-icon-container">
+					<i class="material-icons">picture_in_picture</i>
+				</div>
+				<div class="menu-text-container">
+					<span>ID</span>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-<br>
-
-<form action="/" method="POST">
-  <div class="form-group">
-    <input name="text" class="form-control input-lg" type="text" placeholder="Enter a message" required>
-  </div>
-  <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">
-</form>
-
-<br>
-<hr>
-
-<div>
-  {% for post in posts %}
-    <h4 class="well"><strong>{{post.text}}</strong> - <em>{{post.date_posted.strftime('%Y-%m-%d')}}</em></h4>
-  {% endfor %}
-</div>
-
 {% endblock %}
